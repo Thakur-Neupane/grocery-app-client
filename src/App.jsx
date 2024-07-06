@@ -8,7 +8,7 @@ function App() {
       <div>
         <Header />
 
-        <main className="pt-21">
+        <main className="pt-20 bg-slate-100 min-h-[calc(100vh)]">
           <Outlet />
         </main>
       </div>

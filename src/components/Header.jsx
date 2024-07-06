@@ -10,7 +10,7 @@ const Header = () => {
     setShowMenu((preve) => !preve);
   };
   return (
-    <header className="fixed shadow-md w-full h-20 px-2 md:px-4 z-50">
+    <header className="fixed shadow-md w-full h-20 px-2 md:px-4 z-50 bg-white">
       {/* desktop version */}
 
       <div className="flex items-center h-full justify-between">
