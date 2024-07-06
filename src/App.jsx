@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import "./index.css";
 
@@ -6,6 +7,10 @@ function App() {
     <>
       <div>
         <Header />
+
+        <main className="pt-21">
+          <Outlet />
+        </main>
       </div>
     </>
   );
