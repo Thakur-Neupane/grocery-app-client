@@ -1,12 +1,36 @@
-import { Form } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, InputGroup } from "react-bootstrap";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-import React from "react";
+export const CustomInput = ({ label, type, ...rest }) => {
+  const [showPassword, setShowPassword] = useState(false);
 
-export const CustomInput = ({ label, ...rest }) => {
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <Form.Group>
+    <Form.Group controlId={rest.name}>
       {label && <Form.Label>{label}</Form.Label>}
-      <Form.Control {...rest} />
+      <InputGroup>
+        <Form.Control
+          type={showPassword ? "text" : type}
+          {...rest}
+          autoComplete="off"
+        />
+        {type === "password" && (
+          <InputGroup.Text
+            onClick={togglePasswordVisibility}
+            style={{
+              cursor: "pointer",
+              border: "none",
+              backgroundColor: "transparent",
+            }}
+          >
+            {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+          </InputGroup.Text>
+        )}
+      </InputGroup>
     </Form.Group>
   );
 };
